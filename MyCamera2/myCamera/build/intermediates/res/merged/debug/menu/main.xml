@@ -1,0 +1,39 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.test.mycamera.MainActivity" >
+
+    <item
+        android:id="@+id/detect"
+        android:orderInCategory="100"
+        android:title="@string/start_detect"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/imgGray"
+        android:orderInCategory="100"
+        android:title="@string/img_gray"
+        app:showAsAction="never"/> 
+        
+    <item
+        android:id="@+id/detectSquares"
+        android:orderInCategory="100"
+        android:title="@string/detect_squares"
+        app:showAsAction="never"/>
+        
+        
+    <item
+        android:id="@+id/calculate"
+        android:orderInCategory="100"
+        android:title="@string/calculate"
+        app:showAsAction="never"/>
+        
+    <item
+        android:id="@+id/changeScale"
+        android:orderInCategory="100"
+        android:title="@string/chgscale"
+        app:showAsAction="never"/>
+
+          
+</menu>

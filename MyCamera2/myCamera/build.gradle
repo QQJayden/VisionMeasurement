@@ -1,0 +1,24 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 14
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        applicationId "com.test.mycamera"
+        minSdkVersion 11
+        targetSdkVersion 11
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile project(':openCVLibrary24132')
+    compile 'com.android.support:appcompat-v7:18.0.0'
+}

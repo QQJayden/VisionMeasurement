@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="D:\Android\workspace\MyCamera2\myCamera\build\intermediates\exploded-aar\com.android.support\appcompat-v7\18.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8f11f56e350eacabf2273f646d981356eea0ed77">
+        <dex dex="D:\Android\workspace\MyCamera2\myCamera\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-18.0.0_13f995259bb7903f475646af1f55e4330c467a81\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\workspace\MyCamera1\myCamera\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7c978cd11dd515eb736c6e0c4ec6c40a7b9f1779">
+        <dex dex="D:\Android\workspace\MyCamera1\myCamera\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_c758a0eec9b68f2273749418aa8a02135fdb6004\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\workspace\MyCamera1\myCamera\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cc84d4ed29e5af20110489973a0bb5a7cd4e850f">
+        <dex dex="D:\Android\workspace\MyCamera1\myCamera\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_76678f38e222a640941f14c69ebbf415898e26a1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\workspace\MyCamera1\myCamera\build\intermediates\exploded-aar\com.android.support\appcompat-v7\18.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8f11f56e350eacabf2273f646d981356eea0ed77">
+        <dex dex="D:\Android\workspace\MyCamera1\myCamera\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-18.0.0_1d9f29ec34fa0954971f3ae2039e44021d383a7d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\workspace\MyCamera2\myCamera\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ff413d1171ab8e9f670796abcbb47d93c6f430d7">
+        <dex dex="D:\Android\workspace\MyCamera2\myCamera\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_564d0f4fd7559fad87363553dd931c2e8a6838a7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\workspace\MyCamera2\myCamera\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2f42eb0fbdaaae229ee576ed5089b22ee0494ed1">
+        <dex dex="D:\Android\workspace\MyCamera2\myCamera\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_8e8b3443529881157f1772b46e5de4467c4a1031\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\13260\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="D:\Android\workspace\MyCamera1\myCamera\build\intermediates\transforms\dex\debug\folders\1000\10\support-v4-18.0.0_8512612a604ba22036bafbeece929aa4e574b74d\classes.dex" />
+    </item>
+
+</items>
