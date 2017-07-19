@@ -376,7 +376,7 @@ public class MainActivity extends ActionBarActivity implements CvCameraViewListe
 
 	}
 
-	//  视像头相关处理，主函数，图像处理相关算法均在此处完成
+	//  视像头界面相关处理，主函数，图像处理相关算法均在此处完成
 	@Override
 	public Mat onCameraFrame(CvCameraViewFrame inputFrame) {
 		// TODO Auto-generated method stub
@@ -417,14 +417,20 @@ public class MainActivity extends ActionBarActivity implements CvCameraViewListe
 
         }
 
-        // 提取图像中的白色
+        // 提取图像中的白色，未知原因得闪退？？？
         if(mIsWhite&!isWorking)
         {
             //如果正在运行检测 复制原图
             Mat dstImageW = image.clone();
 
+            //Imgproc.cvtColor(dstImageW, imhsv, Imgproc.COLOR_BGR2HSV );         // 原图转化为HSV
+            // Imgproc.threshold(dstImageW,image,230,255,Imgproc.THRESH_TOZERO);   // 二值化，效果差
 
+            DetectColor.findWhite(dstImageW, dstImageW);
 
+            image = dstImageW.clone();
+
+            //Core.inRange(dstImageW, new Scalar(0,0,0), new Scalar(255,255,255),image);  //直接RGB
 
 
 
@@ -443,10 +449,13 @@ public class MainActivity extends ActionBarActivity implements CvCameraViewListe
 			if ((System.currentTimeMillis() - exitTime) > 2000) {
 				Toast.makeText(getApplicationContext(), "???", Toast.LENGTH_SHORT).show();
 				exitTime = System.currentTimeMillis();
-			} else {
+			}
+
+            else {
 				finish();
 				System.exit(0);
 			}
+
 			return true;
 		}
 		return super.onKeyDown(keyCode, event);

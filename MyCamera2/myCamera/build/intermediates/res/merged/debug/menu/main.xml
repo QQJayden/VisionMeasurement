@@ -17,9 +17,9 @@
         app:showAsAction="never"/> 
         
     <item
-        android:id="@+id/detectSquares"
+        android:id="@+id/detectWhite"
         android:orderInCategory="100"
-        android:title="@string/detect_squares"
+        android:title="@string/detect_white"
         app:showAsAction="never"/>
         
         
@@ -28,12 +28,14 @@
         android:orderInCategory="100"
         android:title="@string/calculate"
         app:showAsAction="never"/>
-        
+
+    <!--
     <item
         android:id="@+id/changeScale"
         android:orderInCategory="100"
         android:title="@string/chgscale"
         app:showAsAction="never"/>
+        -->
 
           
 </menu>

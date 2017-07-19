@@ -809,12 +809,11 @@ containing a value of this type.
         public static final int cameraView=0x7f0a0045;
         public static final int catchDistance=0x7f0a004a;
         public static final int catchYuan=0x7f0a004b;
-        public static final int changeScale=0x7f0a0053;
         public static final int checkbox=0x7f0a002e;
         public static final int collapseActionView=0x7f0a0015;
         public static final int default_activity_button=0x7f0a0029;
         public static final int detect=0x7f0a004f;
-        public static final int detectSquares=0x7f0a0051;
+        public static final int detectWhite=0x7f0a0051;
         public static final int dialog=0x7f0a0019;
         public static final int disableHome=0x7f0a0007;
         public static final int dropdown=0x7f0a001a;
@@ -924,24 +923,16 @@ containing a value of this type.
         public static final int app_name=0x7f0b000e;
         public static final int biaoti=0x7f0b000f;
         public static final int calculate=0x7f0b0010;
-        public static final int chgscale=0x7f0b0011;
-        public static final int detect_squares=0x7f0b0012;
-        public static final int hello_world=0x7f0b0013;
-        public static final int img_gray=0x7f0b0014;
-        public static final int start_detect=0x7f0b0015;
+        public static final int detect_white=0x7f0b0011;
+        public static final int hello_world=0x7f0b0012;
+        public static final int img_gray=0x7f0b0013;
+        public static final int start_detect=0x7f0b0014;
     }
     public static final class style {
         /**  API 11 theme customizations can go here. 
  API 14 theme customizations can go here. 
-
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        
          */
         public static final int AppBaseTheme=0x7f080000;
-        /**  All customizations that are NOT specific to a particular API-level can go here. 
-         */
         public static final int AppTheme=0x7f08003a;
         public static final int TextAppearance_AppCompat_Base_CompactMenu_Dialog=0x7f08003b;
         public static final int TextAppearance_AppCompat_Base_SearchResult=0x7f08003c;

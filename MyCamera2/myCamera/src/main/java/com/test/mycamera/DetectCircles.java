@@ -84,7 +84,7 @@ public class DetectCircles {
     {
 
         //rad = 0.5 * (radMax + radMin);
-        rad = radMin;
+        rad = radMin + 1.0;
 
         /*
         double[] rad0 = new double[circles0.cols()];
