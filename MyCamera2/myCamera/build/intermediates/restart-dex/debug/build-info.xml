@@ -5,33 +5,40 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="1726158038426738"
+    timestamp="1939685428676348"
     token="129716140102072205"
-    verifier="FULL_BUILD_REQUESTED" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="5266" />
+        duration="186" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="271" />
+        duration="106" />
     <task
         name="verifier"
-        duration="11" />
+        duration="2" />
 
     <artifact
-        location="D:\Android\workspace\MyCamera2\myCamera\build\outputs\apk\myCamera-debug.apk"
-        type="MAIN" />
+        location="D:\Android\workspace\MyCamera2\myCamera\build\intermediates\transforms\dex\debug\folders\1000\5\slice_0\classes.dex"
+        type="DEX" />
 
     <build
-        timestamp="1726158038426738"
+        timestamp="1931011973558243"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="D:\Android\workspace\MyCamera2\myCamera\build\outputs\apk\myCamera-debug.apk"
             type="MAIN" />
+    </build>
+    <build
+        timestamp="1939685428676348"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="D:\Android\workspace\MyCamera2\myCamera\build\intermediates\transforms\dex\debug\folders\1000\5\slice_0\classes.dex"
+            type="DEX" />
     </build>
 
 </instant-run>

@@ -56,11 +56,17 @@ public class MainActivity extends ActionBarActivity implements CvCameraViewListe
 
 	private CameraBridgeViewBase mCameraView;
 
-	private double d = 0, coor_x = 0, coor_y = 0, numc = 0, Distance = 0;
-    private int circle_num = 0;
+	private double d = 0, coor_x = 0, coor_y = 0, numc = 0, Distance = 0,
+            center_x = 0, center_y = 0;
+    private int circle_num = 0, contour_num = 0;
 	private double dSum = 0, dsSum = 0, ddSum = 0;
 	private boolean isCalculate = false;
 	private boolean mIsWhite = false;
+    private boolean mIsGreen = false;
+    private boolean mIsYellow = false;
+    private boolean mIsBlue = false;
+    private boolean mIsRed = false;
+
 	private boolean mIsDetectStartC = false;
     private boolean mIsImgGray = false;
 	private boolean isWorking = false;
@@ -71,7 +77,7 @@ public class MainActivity extends ActionBarActivity implements CvCameraViewListe
 	Mat mBgr;
 	TextView showMeasureC,showMeasureCS,showCoordinate, showCircleNum;
 	TextView catchDistance;
-	TextView catchYuan, jieguo, jieguoS, jieguoD;
+	TextView catchYuan, jieguo, jieguoS, jieguoD, catchCenter, catchContourNum;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +90,7 @@ public class MainActivity extends ActionBarActivity implements CvCameraViewListe
         //摄像头初始化
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		mCameraView = (CameraBridgeViewBase) findViewById(R.id.cameraView);
-		// mCameraView.setMaxFrameSize(860,480);
+		//mCameraView.setMaxFrameSize(960,720);
 		mCameraView.setVisibility(SurfaceView.VISIBLE);
 		mCameraView.setCvCameraViewListener(this);
 		// mCameraView.enableView();
@@ -96,6 +102,8 @@ public class MainActivity extends ActionBarActivity implements CvCameraViewListe
 		catchDistance = (TextView) findViewById(R.id.catchDistance);   // 获取距离
 
 		catchYuan = (TextView) findViewById(R.id.catchYuan);   // 半径平均值
+        catchCenter = (TextView) findViewById(R.id.catchCenter); // 区域质心
+        catchContourNum = (TextView) findViewById(R.id.catchContourNum); //连通区域数量
 		jieguo = (TextView) findViewById(R.id.jieguo);      // 边长平均值？？？
 		jieguoS = (TextView)findViewById(R.id.jieguoS);      //面积平均值
         jieguoD = (TextView)findViewById(R.id.jieguoD);      //距离平均值
@@ -183,12 +191,31 @@ public class MainActivity extends ActionBarActivity implements CvCameraViewListe
                             counter++;
                         }
                     }
-
                     else {           // 关闭计算平均值功能
                         catchYuan.setVisibility(View.INVISIBLE);
                         jieguo.setVisibility(View.INVISIBLE);
                         jieguoS.setVisibility(View.INVISIBLE);
                         jieguoD.setVisibility(View.INVISIBLE);
+                    }
+
+                    // 如过检测白色区域，则显示其质心
+                    center_x = DetectColor.getCenterx(); // 获取规定范围内最大区域质心
+                    center_y = DetectColor.getCentery();
+                    contour_num = DetectColor.getContourNum();
+
+
+                    if(mIsRed) {
+
+                        catchCenter.setVisibility(View.VISIBLE);
+                        catchContourNum.setVisibility(View.VISIBLE);
+                        catchCenter.setText("最大白色块的质心坐标为：x="+ center_x + ", y=" + center_y );
+                        catchContourNum.setText("连通区域数目：" + contour_num);
+
+                    }
+
+                    else {
+                        catchCenter.setVisibility(View.INVISIBLE);
+                        catchContourNum.setVisibility(View.INVISIBLE);
                     }
 			
                     //实时显示测量结果
@@ -298,6 +325,7 @@ public class MainActivity extends ActionBarActivity implements CvCameraViewListe
 			return true;    //  //返回true表示处理完菜单项的事件，不需要将该事件继续传播下去了
 		}
 
+        // 检测白色，绿色，黄色区域
         if (id == R.id.detectWhite)
         {
             if (mIsWhite)
@@ -310,6 +338,78 @@ public class MainActivity extends ActionBarActivity implements CvCameraViewListe
             {
                 mIsWhite =true;
                 item.setTitle("退出白色模式e");
+            }
+
+            return true;    //  //返回true表示处理完菜单项的事件，不需要将该事件继续传播下去了
+        }
+
+
+        if (id == R.id.detectGreen)
+        {
+            if (mIsGreen)
+            {
+                mIsGreen = false;
+                item.setTitle("提取图像绿色");
+                Toast.makeText(this, "Stoped", Toast.LENGTH_SHORT).show();
+            }
+            else
+            {
+                mIsGreen =true;
+                item.setTitle("退出绿色模式e");
+            }
+
+            return true;    //  //返回true表示处理完菜单项的事件，不需要将该事件继续传播下去了
+        }
+
+
+        if (id == R.id.detectYellow)
+        {
+            if (mIsYellow)
+            {
+                mIsYellow = false;
+                item.setTitle("提取图像黄色");
+                Toast.makeText(this, "Stoped", Toast.LENGTH_SHORT).show();
+            }
+            else
+            {
+                mIsYellow =true;
+                item.setTitle("退出黄色模式e");
+            }
+
+            return true;    //  //返回true表示处理完菜单项的事件，不需要将该事件继续传播下去了
+        }
+
+
+        if (id == R.id.detectBlue)
+        {
+            if (mIsBlue)
+            {
+                mIsBlue = false;
+                item.setTitle("提取图像蓝色");
+                Toast.makeText(this, "Stoped", Toast.LENGTH_SHORT).show();
+            }
+            else
+            {
+                mIsBlue =true;
+                item.setTitle("退出蓝色模式e");
+            }
+
+            return true;    //  //返回true表示处理完菜单项的事件，不需要将该事件继续传播下去了
+        }
+
+
+        if (id == R.id.detectRed)
+        {
+            if (mIsRed)
+            {
+                mIsRed = false;
+                item.setTitle("提取红色区域");
+                Toast.makeText(this, "Stoped", Toast.LENGTH_SHORT).show();
+            }
+            else
+            {
+                mIsRed =true;
+                item.setTitle("退出红色模式e");
             }
 
             return true;    //  //返回true表示处理完菜单项的事件，不需要将该事件继续传播下去了
@@ -384,6 +484,31 @@ public class MainActivity extends ActionBarActivity implements CvCameraViewListe
         // 直接返回输入视频预览图的RGBA数据并存在Mat数据中，提取了其中一帧？？
 		Mat image = inputFrame.rgba();
 
+
+        // 绘制矩形区域：ROI
+
+        Core.rectangle(image, new Point(150, 10), new Point(1100, 710), new Scalar(255,128,64));
+
+        //image = imgRectROI.clone();
+
+
+        /*
+        // 遍历图像，将ROI区域之外置0: 运算速度太慢
+        for(int i = 0; i < image.rows(); i++)
+        {
+            for(int j = 0; j<image.cols(); j++)
+            {
+                if(i<150 || i>1100 || j<10 || j>710)
+                {
+                    image.row(i).col(j).setTo(new Scalar(0,0,0));
+                }
+            }
+        }
+        */
+
+
+
+
         // 通过各种标签来判断做何种图像处理
 		if (isWorking) {
             //如果正在运行检测 复制原图
@@ -415,6 +540,8 @@ public class MainActivity extends ActionBarActivity implements CvCameraViewListe
             Imgproc.cvtColor(image, image, Imgproc.COLOR_BGR2GRAY);         // 原图转化为灰度图
             Imgproc.blur(image, image, new org.opencv.core.Size(5, 5));    // 均值滤波？提高效率
 
+
+
         }
 
         // 提取图像中的白色，未知原因得闪退？？？
@@ -423,18 +550,88 @@ public class MainActivity extends ActionBarActivity implements CvCameraViewListe
             //如果正在运行检测 复制原图
             Mat dstImageW = image.clone();
 
-            //Imgproc.cvtColor(dstImageW, imhsv, Imgproc.COLOR_BGR2HSV );         // 原图转化为HSV
-            // Imgproc.threshold(dstImageW,image,230,255,Imgproc.THRESH_TOZERO);   // 二值化，效果差
+            /*
+            // 提取感兴趣区域
+            Rect rect = new Rect(150, 10, 950, 700); // 设置矩形ROI的位置
+            Mat dstImageW= new Mat(image, rect);      // 从原图中截取图片
+            */
 
-            DetectColor.findWhite(dstImageW, dstImageW);
+            Mat centers = new Mat();      // 新建白色区域结构，存放质心坐标与面积
+
+            DetectColor.findWhite(dstImageW, dstImageW, centers);
 
             image = dstImageW.clone();
+
+        }
+
+
+        // 提取图像红色
+        if(mIsRed&!isWorking)
+        {
+            //如果正在运行检测 复制原图
+            Mat dstImageR = image.clone();
+
+            Mat centers = new Mat();      // 新建白色区域结构，存放质心坐标与面积
+
+            DetectColor.findRed(dstImageR, dstImageR, centers);
+
+            // 检测圆形
+
+            image = dstImageR.clone();
+
+            //Core.inRange(dstImageW, new Scalar(0,0,0), new Scalar(255,255,255),image);  //直接RGB
+
+        }
+
+
+        // 提取图像绿色
+        if(mIsGreen&!isWorking)
+        {
+            //如果正在运行检测 复制原图
+            Mat dstImageG = image.clone();
+
+            DetectColor.findGreen(dstImageG, dstImageG);
+
+            image = dstImageG.clone();
 
             //Core.inRange(dstImageW, new Scalar(0,0,0), new Scalar(255,255,255),image);  //直接RGB
 
 
+        }
+
+
+        // 提取图像黄色
+        if(mIsYellow&!isWorking)
+        {
+            //如果正在运行检测 复制原图
+            Mat dstImageY = image.clone();
+
+            DetectColor.findYellow(dstImageY, dstImageY);
+
+            image = dstImageY.clone();
+
+            //Core.inRange(dstImageW, new Scalar(0,0,0), new Scalar(255,255,255),image);  //直接RGB
 
         }
+
+
+        // 提取图像蓝色
+        if(mIsBlue&!isWorking)
+        {
+            //如果正在运行检测 复制原图
+            Mat dstImageB = image.clone();
+
+            DetectColor.findBlue(dstImageB, dstImageB);
+
+            // 检测圆形
+
+            image = dstImageB.clone();
+
+            //Core.inRange(dstImageW, new Scalar(0,0,0), new Scalar(255,255,255),image);  //直接RGB
+
+        }
+
+
 
 
 		return image;      // 返回绘制圆后的图像image

@@ -807,13 +807,19 @@ containing a value of this type.
         public static final int beginning=0x7f0a0010;
         public static final int calculate=0x7f0a0052;
         public static final int cameraView=0x7f0a0045;
+        public static final int catchCenter=0x7f0a004f;
+        public static final int catchContourNum=0x7f0a0050;
         public static final int catchDistance=0x7f0a004a;
         public static final int catchYuan=0x7f0a004b;
         public static final int checkbox=0x7f0a002e;
         public static final int collapseActionView=0x7f0a0015;
         public static final int default_activity_button=0x7f0a0029;
-        public static final int detect=0x7f0a004f;
-        public static final int detectWhite=0x7f0a0051;
+        public static final int detect=0x7f0a0051;
+        public static final int detectBlue=0x7f0a0057;
+        public static final int detectGreen=0x7f0a0056;
+        public static final int detectRed=0x7f0a0055;
+        public static final int detectWhite=0x7f0a0054;
+        public static final int detectYellow=0x7f0a0058;
         public static final int dialog=0x7f0a0019;
         public static final int disableHome=0x7f0a0007;
         public static final int dropdown=0x7f0a001a;
@@ -827,7 +833,7 @@ containing a value of this type.
         public static final int icon=0x7f0a002b;
         public static final int ifRoom=0x7f0a0016;
         public static final int image=0x7f0a0028;
-        public static final int imgGray=0x7f0a0050;
+        public static final int imgGray=0x7f0a0053;
         public static final int jieguo=0x7f0a004c;
         public static final int jieguoD=0x7f0a004e;
         public static final int jieguoS=0x7f0a004d;
@@ -923,10 +929,14 @@ containing a value of this type.
         public static final int app_name=0x7f0b000e;
         public static final int biaoti=0x7f0b000f;
         public static final int calculate=0x7f0b0010;
-        public static final int detect_white=0x7f0b0011;
-        public static final int hello_world=0x7f0b0012;
-        public static final int img_gray=0x7f0b0013;
-        public static final int start_detect=0x7f0b0014;
+        public static final int detect_blue=0x7f0b0011;
+        public static final int detect_green=0x7f0b0012;
+        public static final int detect_red=0x7f0b0013;
+        public static final int detect_white=0x7f0b0014;
+        public static final int detect_yellow=0x7f0b0015;
+        public static final int hello_world=0x7f0b0016;
+        public static final int img_gray=0x7f0b0017;
+        public static final int start_detect=0x7f0b0018;
     }
     public static final class style {
         /**  API 11 theme customizations can go here. 

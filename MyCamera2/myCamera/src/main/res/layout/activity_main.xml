@@ -87,6 +87,7 @@
             android:layout_alignParentBottom="true"
             android:text="点击获取距离" />
 
+
         <TextView
             android:id="@+id/catchYuan"
             android:layout_width="wrap_content"
@@ -137,6 +138,27 @@
             android:textColor="#00ff00"
             android:textSize="25sp"
             android:text="结果距离平均值" />
+
+        <!--显示白色区域的质心-->
+        <TextView
+            android:id="@+id/catchCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textColor="#0000ff"
+            android:textSize="25sp"
+            android:text="白色区域质心" />
+
+        <!--显示白色区域轮廓数量-->
+        <TextView
+            android:id="@+id/catchContourNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/catchCenter"
+            android:textColor="#0000ff"
+            android:textSize="25sp"
+            android:text="区域数量" />
 
     </RelativeLayout>
 

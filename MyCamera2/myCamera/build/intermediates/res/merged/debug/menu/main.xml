@@ -11,6 +11,12 @@
         app:showAsAction="never"/>
 
     <item
+        android:id="@+id/calculate"
+        android:orderInCategory="100"
+        android:title="@string/calculate"
+        app:showAsAction="never"/>
+
+    <item
         android:id="@+id/imgGray"
         android:orderInCategory="100"
         android:title="@string/img_gray"
@@ -21,13 +27,32 @@
         android:orderInCategory="100"
         android:title="@string/detect_white"
         app:showAsAction="never"/>
-        
-        
+
     <item
-        android:id="@+id/calculate"
+        android:id="@+id/detectRed"
         android:orderInCategory="100"
-        android:title="@string/calculate"
+        android:title="@string/detect_red"
         app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/detectGreen"
+        android:orderInCategory="100"
+        android:title="@string/detect_green"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/detectBlue"
+        android:orderInCategory="100"
+        android:title="@string/detect_blue"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/detectYellow"
+        android:orderInCategory="100"
+        android:title="@string/detect_yellow"
+        app:showAsAction="never"/>
+        
+
 
     <!--
     <item

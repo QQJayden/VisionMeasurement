@@ -35,7 +35,9 @@ public class DetectCircles {
     */
     public static void findCircles(Mat dstImage,Mat circles){
 
-        Imgproc.HoughCircles(dstImage,circles,Imgproc.CV_HOUGH_GRADIENT,1.5,50);
+        //Imgproc.HoughCircles(dstImage,circles,Imgproc.CV_HOUGH_GRADIENT,1.5,50);
+        //Imgproc.HoughCircles(dstImage,circles,Imgproc.CV_HOUGH_GRADIENT,2,500); // 参数调节1
+        Imgproc.HoughCircles(dstImage,circles,Imgproc.CV_HOUGH_GRADIENT,2,300,100,100,0,30); // 参数调节2
 
     }
 

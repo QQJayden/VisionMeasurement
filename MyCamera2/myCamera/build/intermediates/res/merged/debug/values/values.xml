@@ -171,7 +171,11 @@
     <string name="app_name">智能相机</string>
     <string name="biaoti">视觉检测的智能相机</string>
     <string name="calculate">开启平均值功能</string>
+    <string name="detect_blue">检测蓝色区域</string>
+    <string name="detect_green">检测绿色区域</string>
+    <string name="detect_red">检测红色区域</string>
     <string name="detect_white">检测白色区域</string>
+    <string name="detect_yellow">检测黄色区域</string>
     <string name="hello_world">Hello world!</string>
     <string name="img_gray">灰度图像</string>
     <string name="start_detect">开始检测</string>
