@@ -1,8 +1,10 @@
 ﻿# 项目总结：基于视觉的自动线束安装
 
-标签（空格分隔）： 笔试面试
+标签（空格分隔）： 
 
 ---
+
+Android4opencv & bluetooth
 
 > 参考博客：
 [【OpenCV入门教程之十一】 形态学图像处理（二）：开运算、闭运算、形态学梯度、顶帽、黑帽合辑](https://blog.csdn.net/poem_qianmo/article/details/24599073)
